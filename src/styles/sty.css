@@ -23,3 +23,12 @@
   border: 1px solid #ddd;
   padding: 8px 
 }
+
+.itemListArea{
+  width: 50%;
+  justify-content: center;
+  position: relative;
+  border:2px solid red;
+  align-items: center;
+}
+

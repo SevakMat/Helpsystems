@@ -1,33 +1,39 @@
 import "../styles/sty.css"
 
 function RegistrationForm(props) {
+
+    function myFunction(){
+        console.log(333);
+    }
+
+
   return(
     <div className="regForm">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <form>
-                <div className="form-group text-left">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" 
-                       className="form-control" 
-                       id="email" 
-                       aria-describedby="emailHelp" 
-                       placeholder="Enter email"
-                />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" 
+            <form onSubmit={myFunction} >
+                <div className="form-group ">
+                    <label >name</label>
+                    <input 
                         className="form-control" 
-                        id="password" 
-                        placeholder="Password"
                     />
                 </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Confirm Password</label>
+                <div className="form-group">
+                    <label >Last name</label>
                     <input type="password" 
                         className="form-control" 
-                        id="confirmPassword" 
+                    />
+                </div>
+                <div className="form-group">
+                    <label >age</label>
+                    <input type="password" 
+                        className="form-control" 
+                        placeholder="Confirm Password"
+                    />
+                </div>
+                <div className="form-group">
+                    <label >gmail</label>
+                    <input type="password" 
+                        className="form-control" 
                         placeholder="Confirm Password"
                     />
                 </div>

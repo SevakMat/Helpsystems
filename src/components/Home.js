@@ -1,28 +1,49 @@
 import {useState} from "react"
 
-import ItemList from "./ItemList"
-import RegistrationForm from "./Registration"
+import Users from "./users/Users"
+import Categories from "./categories/Categories"
+import Items from "./items/Items"
 
 import "../styles/sty.css"
 
 
-import getCategoriList from "../service/service.js"
-
 function Home() {
-  const[itemList,setItemList]= useState([])
+  const[isUsers,setisUsers]= useState(false)
+  const[isCategories,setisCategories]= useState(false)
+  const[isItems,setisItems]= useState(false)
 
   function onSelect(e){
-    setItemList(getCategoriList(e.target.innerText))
+    console.log(e.target.innerText);
+    switch(e.target.innerText){
+      case("users"):
+        setisUsers(true)
+        setisCategories(false)
+        setisItems(false)
+        return
+      case("items"):
+        setisUsers(false)
+        setisCategories(false)
+        setisItems(true)
+        return
+      case("categories"):
+        setisUsers(false)
+        setisCategories(true)
+        setisItems(false)
+        return
+    }
+    
   }
+  
   return (
     <div  className="customers">
-      {true && <RegistrationForm/>}
-      <tr>
-        <th onClick={onSelect}>people</th>
+      <tr style={{cursor: "pointer"}}>
+        <th onClick={onSelect}>users</th>
         <th onClick={onSelect}>items</th>
         <th onClick={onSelect}>categories</th>
       </tr>
-      <ItemList itemList={itemList} />
+      {isUsers && <Users/>}
+      {isCategories && <Categories/>}
+      {isItems && <Items/>}
     </div>
   );
 }
