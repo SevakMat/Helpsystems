@@ -28,12 +28,11 @@ export  function deleteItem(e,selectItem){
       let newArr = List.peopleList.filter((item)=>{
         return item.id !== e
       })
-      console.log(newArr,"hesa");
       List.peopleList = newArr
       return  List.peopleList 
 
     case "items":
-      let newArr1 = List.itemsList.filter((item)=>{
+      let newArr1 = List.itemList.filter((item)=>{
         return item.id !== e
       })
       List.itemList = newArr1
@@ -44,8 +43,9 @@ export  function deleteItem(e,selectItem){
         return item.id !== e
       })
       List.categoriseList = newArr2
+
       return  List.categoriseList   
- 
+      
     default:
       console.log("problem in service js ");
       return []  
@@ -54,20 +54,21 @@ export  function deleteItem(e,selectItem){
 
 
 export  function addItem(e,objItem){
+  console.log("222",objItem);
   switch(objItem){
     case "users":
-      let id = List.peopleList.length+1
-      e[id] = id;
+      let id3 = List.peopleList.length+1
+      e["id"] = id3;
       List.peopleList.push(e)
       return List.peopleList
     case "items":
       let id1 = List.itemsList.length+1
-      e[id] = id1;
+      e["id"] = id1;
       List.itemsList.push(e)   
       return  List.itemsList
     case "categories":
      let id2 = List.categoriseList.length+1
-     e[id] = id2;
+     e["id"] = id2;
       List.categoriseList.push(e) 
       return List.categoriseList
     default:

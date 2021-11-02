@@ -8,7 +8,6 @@ import {deleteItem} from "../service/service"
 import getCategoriList from "../service/service.js"
 
 function ItemList({selectItem}){
-  console.log(selectItem,"ssss");
   const dispach = useDispatch()
 
   const selectedList = useSelector(function(state){

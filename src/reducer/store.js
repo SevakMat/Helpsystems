@@ -1,8 +1,8 @@
 import {createStore} from "redux"
 
 const store = createStore (function(state,action){
-  if(action.type ==="changeItemList"){
-    console.log("chishta");
+  if(action.type ==="addCategory"){
+    console.log("action",action);
     return{
       ...state,
       itemList:{
@@ -24,8 +24,6 @@ const store = createStore (function(state,action){
   itemList:{
     items:[],
   },
-  registration:{
-    isRegistrationOpen:false
-  }
+
 })
 export default store;

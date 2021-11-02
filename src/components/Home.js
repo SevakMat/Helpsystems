@@ -13,7 +13,6 @@ function Home() {
   const[isItems,setisItems]= useState(false)
 
   function onSelect(e){
-    console.log(e.target.innerText);
     switch(e.target.innerText){
       case("users"):
         setisUsers(true)
